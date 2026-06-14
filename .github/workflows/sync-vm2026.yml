@@ -1,0 +1,42 @@
+name: Sync VM2026 files
+
+on:
+  push:
+    paths:
+      - '.github/workflows/sync-vm2026.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Vmtest
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Download and unpack VM2026
+        run: |
+          set -e
+          WORKDIR="$(mktemp -d)"
+          curl -L "https://github.com/thomas93berland/VM2026/archive/refs/heads/main.zip" -o "$WORKDIR/vm2026.zip"
+          unzip -q "$WORKDIR/vm2026.zip" -d "$WORKDIR"
+          SRC="$WORKDIR/VM2026-main"
+          if [ ! -d "$SRC" ]; then
+            echo "Fant ikke VM2026-main i zip"
+            exit 1
+          fi
+          find . -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} +
+          cp -a "$SRC"/. .
+          rm -rf .github/workflows/sync-vm2026.yml
+
+      - name: Commit unpacked files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Upload VM2026 files" || exit 0
+          git push
