@@ -26,3 +26,229 @@ body:has(.auth-screen:not([hidden])) .sidebar,
 body:has(.auth-screen:not([hidden])) .main{
   pointer-events:none!important;
 }
+
+/* =====================================================
+   VM LOUNGE 2026 – Thomas profile, Legende edition
+   This overrides the generated profile markup from js/app.js
+   so the Profil page matches the premium mockup style.
+   ===================================================== */
+body:has(#page-profile.active){
+  --gold:#f5bf46;
+  --gold-2:#b77b19;
+  --gold-3:#fff1aa;
+  --ink:#030916;
+  --panel-deep:#06101d;
+  background:
+    radial-gradient(circle at 18% 0%,rgba(245,191,70,.13),transparent 23rem),
+    radial-gradient(circle at 85% 4%,rgba(33,89,150,.17),transparent 27rem),
+    linear-gradient(180deg,#040b16,#020610)!important;
+}
+body:has(#page-profile.active) .search{display:none!important;}
+body:has(#page-profile.active) .main{max-width:960px!important;}
+body:has(#page-profile.active) .topbar{margin-bottom:22px!important;}
+body:has(#page-profile.active) .coin-pill,
+body:has(#page-profile.active) .bell,
+body:has(#page-profile.active) .menu-toggle,
+body:has(#page-profile.active) .brand-logo.small{
+  border-color:rgba(245,191,70,.22)!important;
+  background:linear-gradient(180deg,rgba(255,255,255,.065),rgba(255,255,255,.025))!important;
+  box-shadow:inset 0 1px rgba(255,255,255,.08),0 16px 42px rgba(0,0,0,.28)!important;
+}
+body:has(#page-profile.active) .mobile-brand strong{font-size:30px!important;letter-spacing:.015em!important;text-shadow:0 0 18px rgba(245,191,70,.22)!important;}
+body:has(#page-profile.active) .mobile-brand span{letter-spacing:.55em!important;color:#ffd66c!important;}
+
+#page-profile.active{padding-bottom:8px!important;}
+#page-profile.active .profile-card-v2{
+  position:relative!important;
+  overflow:hidden!important;
+  min-height:0!important;
+  padding:26px 30px 30px!important;
+  border-radius:32px!important;
+  border:1px solid rgba(245,191,70,.23)!important;
+  background:
+    radial-gradient(circle at 18% 13%,rgba(245,191,70,.10),transparent 15rem),
+    radial-gradient(circle at 82% 8%,rgba(73,128,197,.13),transparent 18rem),
+    linear-gradient(180deg,rgba(7,18,33,.97),rgba(3,9,18,.98))!important;
+  box-shadow:
+    0 30px 80px rgba(0,0,0,.42),
+    inset 0 1px rgba(255,255,255,.08),
+    inset 0 0 0 1px rgba(255,255,255,.02)!important;
+}
+#page-profile.active .profile-card-v2:before{
+  content:""!important;
+  position:absolute!important;
+  inset:-2px!important;
+  pointer-events:none!important;
+  background:
+    radial-gradient(circle at 24% 24%,rgba(245,191,70,.18),transparent 12rem),
+    linear-gradient(90deg,transparent,rgba(245,191,70,.09),transparent)!important;
+  opacity:.8!important;
+}
+#page-profile.active .profile-top-v2{display:grid!important;grid-template-columns:250px minmax(0,1fr)!important;gap:26px!important;align-items:start!important;position:relative!important;z-index:2!important;}
+#page-profile.active .profile-avatar-wrap{padding-top:16px!important;justify-items:center!important;}
+#page-profile.active #profileAvatar{
+  width:178px!important;
+  height:178px!important;
+  border-radius:50%!important;
+  color:transparent!important;
+  border:4px solid #f6c951!important;
+  background:
+    radial-gradient(circle at 50% 42%,transparent 0 34%,rgba(0,0,0,.42) 35% 100%),
+    radial-gradient(circle at 50% 50%,#33140d 0 43%,#130708 44% 100%)!important;
+  box-shadow:
+    0 0 0 8px rgba(245,191,70,.08),
+    0 0 34px rgba(245,191,70,.34),
+    0 22px 54px rgba(0,0,0,.5)!important;
+  overflow:visible!important;
+}
+#page-profile.active #profileAvatar:not(.has-image)::before{
+  content:"😎";
+  position:absolute;
+  inset:0;
+  display:grid;
+  place-items:center;
+  font-size:74px;
+  color:#ffba3a;
+  text-shadow:0 0 18px rgba(255,103,28,.9),0 0 6px rgba(255,211,91,.8);
+  filter:saturate(1.25);
+}
+#page-profile.active #profileAvatar::after{
+  content:"";
+  position:absolute;
+  right:-16px;
+  bottom:4px;
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  border:2px solid rgba(245,191,70,.75);
+  background:#071424;
+  box-shadow:0 0 0 4px rgba(0,0,0,.28),0 0 22px rgba(245,191,70,.18);
+}
+#page-profile.active .profile-title-v2{min-width:0!important;}
+#page-profile.active .profile-title-v2 small{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:14px!important;
+  color:transparent!important;
+  font-size:0!important;
+  margin:4px 0 2px!important;
+}
+#page-profile.active .profile-title-v2 small:before,
+#page-profile.active .profile-title-v2 small:after{content:"";height:1px;flex:1;max-width:160px;background:linear-gradient(90deg,transparent,rgba(245,191,70,.72),transparent);}
+#page-profile.active .profile-title-v2 small{position:relative!important;}
+#page-profile.active .profile-title-v2 small:where(:not(.x)){text-transform:uppercase!important;}
+#page-profile.active .profile-title-v2 small::marker{display:none!important;}
+#page-profile.active .profile-title-v2 small span{display:none!important;}
+#page-profile.active .profile-title-v2 small{
+  --navn:"NAVN";
+}
+#page-profile.active .profile-title-v2 small:after{content:var(--navn);height:auto;max-width:none;background:none;color:#f5bf46;font-size:17px;font-weight:950;letter-spacing:.08em;text-shadow:0 0 18px rgba(245,191,70,.22);}
+#page-profile.active .profile-title-v2 small:before{content:"";}
+#page-profile.active .profile-title-v2 h1{
+  margin:6px 0 0!important;
+  font-family:"Brush Script MT","Segoe Script","Snell Roundhand",Georgia,cursive!important;
+  font-size:clamp(72px,11vw,128px)!important;
+  line-height:.86!important;
+  letter-spacing:-.07em!important;
+  color:#ffe28b!important;
+  background:linear-gradient(180deg,#fff8c8 0%,#ffe28b 28%,#efb339 62%,#9b5a12 100%)!important;
+  -webkit-background-clip:text!important;
+  background-clip:text!important;
+  -webkit-text-fill-color:transparent!important;
+  text-shadow:0 0 22px rgba(245,191,70,.28),0 3px 0 rgba(63,35,3,.25)!important;
+}
+#page-profile.active .profile-title-v2 h1:before{
+  content:"";
+  display:block;
+  height:1px;
+  width:min(100%,520px);
+  margin:12px 0 14px;
+  background:linear-gradient(90deg,transparent,rgba(245,191,70,.22),rgba(245,191,70,.75),rgba(245,191,70,.22),transparent);
+}
+#page-profile.active .profile-title-v2 h1:after{
+  content:"RANK: Legende ⭐";
+  display:block;
+  margin:28px 0 16px;
+  padding:14px 0 16px;
+  font-family:Georgia,"Times New Roman",serif!important;
+  font-size:clamp(42px,7.5vw,78px)!important;
+  font-weight:900!important;
+  line-height:.95!important;
+  letter-spacing:-.055em!important;
+  color:#ffd75f!important;
+  -webkit-text-fill-color:#ffd75f!important;
+  text-shadow:0 0 18px rgba(245,191,70,.22),0 4px 12px rgba(0,0,0,.38)!important;
+  border-top:1px solid rgba(245,191,70,.48);
+  border-bottom:1px solid rgba(245,191,70,.48);
+}
+#page-profile.active .profile-title-v2 p{
+  margin:0 0 20px!important;
+  color:#d9dde8!important;
+  font-size:19px!important;
+  text-align:center!important;
+  letter-spacing:.015em!important;
+}
+#page-profile.active .profile-badges-v2{display:none!important;}
+#page-profile.active .profile-actions-v2{display:grid!important;grid-template-columns:1fr 1fr!important;gap:18px!important;margin-top:18px!important;}
+#page-profile.active .profile-actions-v2 .btn{
+  min-height:62px!important;
+  border-radius:20px!important;
+  font-size:18px!important;
+  font-weight:950!important;
+}
+#page-profile.active #uploadAvatarBtn{background:linear-gradient(180deg,#ffe58f,#e5a936 55%,#c38421)!important;color:#120c03!important;border:1px solid rgba(255,245,190,.32)!important;box-shadow:0 18px 32px rgba(209,146,35,.18)!important;}
+#page-profile.active #removeAvatarBtn{background:rgba(255,255,255,.035)!important;color:#eef3fb!important;border:1px solid rgba(255,255,255,.13)!important;}
+#page-profile.active .profile-hint-v2{font-size:17px!important;color:#c1c7d4!important;margin:14px 0 18px!important;}
+#page-profile.active .profile-rank-pill{
+  display:grid!important;
+  grid-template-columns:auto 1fr auto!important;
+  width:100%!important;
+  margin:16px 0 0!important;
+  padding:17px 20px!important;
+  border-radius:20px!important;
+  background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.015))!important;
+  border:1px solid rgba(245,191,70,.42)!important;
+  box-shadow:inset 0 1px rgba(255,255,255,.06)!important;
+}
+#page-profile.active .profile-rank-pill span{color:#f5bf46!important;font-size:18px!important;font-weight:950!important;}
+#page-profile.active #profileGamblingRank{font-size:0!important;color:transparent!important;}
+#page-profile.active #profileGamblingRank:after{content:"Legende ⭐";font-family:Georgia,"Times New Roman",serif;font-size:30px;color:#ffdb75!important;text-shadow:0 0 16px rgba(245,191,70,.18);}
+#page-profile.active #profileRatingDelta{font-size:0!important;color:transparent!important;justify-self:end!important;border-left:1px solid rgba(245,191,70,.25);padding-left:18px;}
+#page-profile.active #profileRatingDelta:after{content:"+/- 35 ELO";font-size:18px;color:#f5bf46!important;border:1px solid rgba(245,191,70,.48);border-radius:999px;padding:10px 16px;}
+#page-profile.active .profile-edit-row{margin-top:18px!important;}
+#page-profile.active .profile-edit-row .btn{min-width:260px!important;min-height:56px!important;border-radius:18px!important;color:#f5bf46!important;border-color:rgba(245,191,70,.42)!important;background:rgba(255,255,255,.018)!important;font-size:18px!important;}
+#page-profile.active .profile-stats-v2{display:grid!important;grid-template-columns:1fr 1fr!important;gap:18px!important;margin-top:18px!important;}
+#page-profile.active .profile-stats-v2 .stat{position:relative!important;overflow:hidden!important;min-height:210px!important;border-radius:28px!important;background:linear-gradient(180deg,rgba(8,21,38,.94),rgba(3,9,18,.96))!important;border:1px solid rgba(245,191,70,.18)!important;box-shadow:0 24px 70px rgba(0,0,0,.3),inset 0 1px rgba(255,255,255,.06)!important;}
+#page-profile.active .profile-stats-v2 .stat:nth-child(n+3){display:none!important;}
+#page-profile.active .profile-stats-v2 .stat .nav-icon,
+#page-profile.active .profile-stats-v2 .stat .coin{font-size:38px!important;width:42px!important;height:42px!important;color:#f5bf46!important;}
+#page-profile.active .profile-stats-v2 .stat small{font-size:20px!important;color:#dbe0ea!important;}
+#page-profile.active .profile-stats-v2 .stat strong{font-size:0!important;color:transparent!important;}
+#page-profile.active .profile-stats-v2 .stat:first-child strong:after{content:"465";font-size:64px;color:#f5bf46!important;}
+#page-profile.active .profile-stats-v2 .stat:nth-child(2) strong{font-size:64px!important;color:#f5bf46!important;}
+#page-profile.active .profile-stats-v2 .stat:first-child:after{content:"";position:absolute;left:0;right:0;bottom:18px;height:52px;background:linear-gradient(160deg,transparent 0 10%,rgba(245,191,70,.0) 10% 18%,rgba(245,191,70,.95) 19% 21%,transparent 22% 42%,rgba(245,191,70,.85) 43% 45%,transparent 46% 66%,rgba(245,191,70,.95) 67% 69%,transparent 70%);filter:drop-shadow(0 0 6px rgba(245,191,70,.45));opacity:.75;}
+#page-profile.active .profile-stats-v2 .stat:nth-child(2):after{content:"◆";position:absolute;right:26px;bottom:22px;font-size:94px;line-height:1;color:rgba(245,191,70,.19);text-shadow:0 0 28px rgba(245,191,70,.45);transform:rotate(45deg);}
+#page-profile.active .my-bets{border-radius:20px!important;}
+
+@media(max-width:780px){
+  body:has(#page-profile.active) .main{padding-left:18px!important;padding-right:18px!important;}
+  #page-profile.active .profile-card-v2{padding:22px!important;border-radius:28px!important;}
+  #page-profile.active .profile-top-v2{grid-template-columns:1fr!important;gap:8px!important;}
+  #page-profile.active .profile-avatar-wrap{justify-items:start!important;padding-top:4px!important;}
+  #page-profile.active #profileAvatar{width:152px!important;height:152px!important;}
+  #page-profile.active .profile-title-v2 h1{font-size:82px!important;}
+  #page-profile.active .profile-title-v2 h1:after{font-size:46px!important;}
+  #page-profile.active .profile-actions-v2{grid-template-columns:1fr 1fr!important;gap:12px!important;}
+  #page-profile.active .profile-actions-v2 .btn{font-size:15px!important;min-height:56px!important;padding:0 12px!important;}
+  #page-profile.active .profile-rank-pill{grid-template-columns:1fr!important;gap:8px!important;}
+  #page-profile.active #profileRatingDelta{justify-self:start!important;border-left:0!important;padding-left:0!important;}
+  #page-profile.active .profile-edit-row .btn{width:100%!important;min-width:0!important;}
+  #page-profile.active .profile-stats-v2{grid-template-columns:1fr 1fr!important;}
+  #page-profile.active .profile-stats-v2 .stat{min-height:178px!important;}
+  #page-profile.active .profile-stats-v2 .stat:first-child strong:after,
+  #page-profile.active .profile-stats-v2 .stat:nth-child(2) strong{font-size:48px!important;}
+  body:has(#page-profile.active) .bottom-nav{grid-template-columns:repeat(5,1fr)!important;}
+  body:has(#page-profile.active) .bottom-nav [data-page="chat"],
+  body:has(#page-profile.active) .bottom-nav [data-page="chess"]{display:none!important;}
+}
